@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>No More Lasso</name>
+	<author>paulevs</author>
+	<packageId>paulevs.NoMoreLasso</packageId>
+	<url></url>
+	<supportedVersions>
+		<li>1.6</li>
+	</supportedVersions>
+	<modDependencies>
+	  <li>
+	    <packageId>co.uk.epicguru.meleeanimation</packageId>
+	    <displayName>Melee Animation</displayName>
+	  </li>
+	</modDependencies>
+	<description>
+Simple mod that completely removes lasso from Melee Animation mod.
+
+Lasso items will be removed from the map and pawns inventory on map load and when new pawns spawn.
+Lasso will be not selled by traders (has zero market value).
+Button with lasso modes will is removed too.
+	</description>
+	<url>https://github.com/paulevsGitch/NoMoreLasso</url>
+</ModMetaData>

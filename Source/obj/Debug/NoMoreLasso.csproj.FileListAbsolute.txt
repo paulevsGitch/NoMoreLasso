@@ -1,0 +1,10 @@
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\NoMoreLasso\Assemblies\NoMoreLasso.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\NoMoreLasso\Assemblies\NoMoreLasso.pdb
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\NoMoreLasso\Source\obj\Debug\NoMoreLasso.csproj.AssemblyReference.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\NoMoreLasso\Source\obj\Debug\NoMoreLasso.GeneratedMSBuildEditorConfig.editorconfig
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\NoMoreLasso\Source\obj\Debug\NoMoreLasso.AssemblyInfoInputs.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\NoMoreLasso\Source\obj\Debug\NoMoreLasso.AssemblyInfo.cs
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\NoMoreLasso\Source\obj\Debug\NoMoreLasso.csproj.CoreCompileInputs.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\NoMoreLasso\Source\obj\Debug\NoMoreLasso.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\NoMoreLasso\Source\obj\Debug\NoMoreLasso.pdb
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\NoMoreLasso\Source\obj\Debug\NoMoreLasso.sourcelink.json
