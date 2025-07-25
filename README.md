@@ -6,7 +6,7 @@
 
 Simple mod for RimWorld that completely removes lasso from Melee Animation mod.
 
-Should be save to add and remove in the midgame.
+Should be safe to add and remove in the midgame.
 
 Lasso items will be removed from the map and pawns inventory on map load and when new pawns spawn.
 Lasso can't be crafted anymore.
