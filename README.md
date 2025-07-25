@@ -1,6 +1,6 @@
 # NoMoreLasso
 
-<div style="text-align:center">
+<div align="center" width="100%" style="text-align:center;width:100%;">
 	<img src="About/Preview.png"/>
 </div>
 
