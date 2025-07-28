@@ -3,7 +3,7 @@
 	<name>No More Lasso</name>
 	<author>paulevs</author>
 	<packageId>paulevs.NoMoreLasso</packageId>
-	<url></url>
+	<url>https://github.com/paulevsGitch/NoMoreLasso</url>
 	<supportedVersions>
 		<li>1.6</li>
 	</supportedVersions>
@@ -26,5 +26,4 @@ Button with lasso modes was removed.
 License: MIT
 Sources: https://github.com/paulevsGitch/NoMoreLasso
 	</description>
-	<url>https://github.com/paulevsGitch/NoMoreLasso</url>
 </ModMetaData>
