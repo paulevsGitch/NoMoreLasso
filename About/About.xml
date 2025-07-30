@@ -3,8 +3,6 @@
 	<name>No More Lasso</name>
 	<author>paulevs</author>
 	<packageId>paulevs.NoMoreLasso</packageId>
-	<downloadUrl>https://github.com/paulevsGitch/NoMoreLasso</downloadUrl>
-	<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3534182584</steamWorkshopUrl>
 	<url>https://github.com/paulevsGitch/NoMoreLasso</url>
 	<supportedVersions>
 		<li>1.6</li>
@@ -13,6 +11,7 @@
 	  <li>
 	    <packageId>co.uk.epicguru.meleeanimation</packageId>
 	    <displayName>Melee Animation</displayName>
+		<steamWorkshopUrl>steam://url/CommunityFilePage/2944488802</steamWorkshopUrl>
 	  </li>
 	</modDependencies>
 	<description>
