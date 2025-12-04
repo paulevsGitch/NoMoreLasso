@@ -13,26 +13,38 @@ public class LassoRemove : MapComponent {
 	public override void FinalizeInit() {
 		base.FinalizeInit();
 		RemoveFromMap();
-		RemoveFromMap();
+		RemoveFromPawns();
 	}
 
 	public override void MapComponentTick() {
 		base.MapComponentTick();
 		if (skipTicks++ < 60) return;
 		skipTicks = 0;
-		RemoveFromMap();
+		if (pawnsOrMapSwitch) RemoveFromMap();
+		else RemoveFromPawns();
+		pawnsOrMapSwitch = !pawnsOrMapSwitch;
+	}
+
+	private void RemoveFromPawns() {
+		foreach (Pawn pawn in map.mapPawns.AllPawns) {
+			if (!pawn.Spawned) continue;
+			if (pawn.apparel == null && pawn.inventory == null) continue;
+			RemoveLasso(pawn);
+		}
 	}
 
 	private void RemoveFromMap() {
-		if (pawnsOrMapSwitch) {
-			foreach (Pawn pawn in map.mapPawns.AllPawns) {
-				if (!pawn.Spawned) continue;
-				if (pawn.apparel == null && pawn.inventory == null) continue;
-				RemoveLasso(pawn);
-			}
+		List<Thing> things = map.listerThings.AllThings;
+		List<Thing> toRemoveItems = new();
+
+		foreach (Thing thing in things) {
+			if (!IsLasso(thing)) continue;
+			toRemoveItems.Add(thing);
 		}
-		else RemoveItems(map);
-		pawnsOrMapSwitch = !pawnsOrMapSwitch;
+
+		foreach (Thing item in toRemoveItems) {
+			item.Destroy();
+		}
 	}
 
 	private static void RemoveLasso(Pawn pawn) {
@@ -62,20 +74,6 @@ public class LassoRemove : MapComponent {
 				pawn.apparel.WornApparel.Remove(apparel);
 				apparel.Destroy();
 			}
-		}
-	}
-
-	private static void RemoveItems(Map map) {
-		List<Thing> things = map.listerThings.AllThings;
-		List<Thing> toRemoveItems = new();
-
-		foreach (Thing thing in things) {
-			if (!IsLasso(thing)) continue;
-			toRemoveItems.Add(thing);
-		}
-
-		foreach (Thing item in toRemoveItems) {
-			item.Destroy();
 		}
 	}
 
