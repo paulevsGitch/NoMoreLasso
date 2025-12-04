@@ -5,33 +5,34 @@ using Verse;
 namespace NoMoreLasso;
 
 public class LassoRemove : MapComponent {
-	private readonly HashSet<int> checkedPawns = new(128);
+	private byte skipTicks;
+	private bool pawnsOrMapSwitch;
 
 	public LassoRemove(Map map) : base(map) { }
 
 	public override void FinalizeInit() {
 		base.FinalizeInit();
-		foreach (Pawn pawn in map.mapPawns.AllPawns) {
-			RemoveLasso(pawn);
-		}
-		RemoveItems(map);
+		RemoveFromMap();
+		RemoveFromMap();
 	}
 
 	public override void MapComponentTick() {
 		base.MapComponentTick();
+		if (skipTicks++ < 60) return;
+		skipTicks = 0;
+		RemoveFromMap();
+	}
 
-		List<Pawn> allPawns = map.mapPawns.AllPawns;
-
-		foreach (Pawn pawn in allPawns) {
-			if (pawn.Spawned && (pawn.inventory != null || pawn.apparel != null) && !checkedPawns.Contains(pawn.thingIDNumber)) {
+	private void RemoveFromMap() {
+		if (pawnsOrMapSwitch) {
+			foreach (Pawn pawn in map.mapPawns.AllPawns) {
+				if (!pawn.Spawned) continue;
+				if (pawn.apparel == null && pawn.inventory == null) continue;
 				RemoveLasso(pawn);
-				checkedPawns.Add(pawn.thingIDNumber);
 			}
 		}
-
-		if (checkedPawns.Count > (allPawns.Count << 1)) {
-			checkedPawns.Clear();
-		}
+		else RemoveItems(map);
+		pawnsOrMapSwitch = !pawnsOrMapSwitch;
 	}
 
 	private static void RemoveLasso(Pawn pawn) {
